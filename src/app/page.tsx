@@ -21,9 +21,10 @@ export default async function Home({ searchParams }: PageProps) {
                 })}
             >
                 <Tokens />
+
                 <div className='relative w-full sm:w-[550px]'>
                     <DandcingText className='absolute -z-0 left-1/2 w-[412px] sm:w-[550px] -ml-[206px] sm:-ml-[275px]' />
-                    <div className='relative z-10 -mt-4 sm:mt-[236px] h-full flex flex-col gap-6 items-center justify-center'>
+                    <div className='relative z-10 mt-[140px] sm:mt-[236px] h-full flex flex-col gap-6 items-center justify-center'>
                         <Logo />
                         <Omnibox />
                     </div>
