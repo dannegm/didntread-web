@@ -23,7 +23,7 @@ export default function Debugger({ className, show = false }: DebuggerProps) {
         <div
             className={cn(
                 'debugger',
-                'fixed z-max right-2 bottom-2 rounded-md overflow-hidden bg-[#0f172a] shadow-xl',
+                'fixed z-max right-2 bottom-2 left-2 sm:left-auto rounded-md overflow-hidden bg-[#0f172a] shadow-xl',
                 className,
             )}
         >

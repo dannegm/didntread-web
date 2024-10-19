@@ -16,8 +16,8 @@ export default function DandcingText({ className }: ElementProps) {
         <div className='select-none bg-[#fcfcfc] overflow-hidden'>
             <p
                 className={cn(
-                    'text-[10px] font-normal font-mono leading-none break-all h-[360px] w-[412px] sm:h-[480px] sm:w-[550px] overflow-hidden text-transparent',
-                    "bg-left bg-clip-text bg-[length:12352px_360px] sm:bg-[length:16470px_480px] bg-[url('/images/dancer.jpg')] animate-[dancer_2s_steps(30)_infinite] sm:animate-[dancer-sm_2s_steps(30)_infinite]",
+                    'text-[10px] font-normal font-mono leading-none break-all h-[330px] w-[380px] sm:h-[480px] sm:w-[550px] overflow-hidden text-transparent',
+                    "bg-left bg-clip-text bg-[length:11400px_330px] sm:bg-[length:16470px_480px] bg-[url('/images/dancer.jpg')] animate-[dancer_2s_steps(30)_infinite] sm:animate-[dancer-sm_2s_steps(30)_infinite]",
                     className,
                 )}
             >

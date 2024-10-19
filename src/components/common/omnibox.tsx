@@ -44,7 +44,7 @@ export default function Omnibox({ className }: ElementProps) {
         <div className='flex flex-col gap-8 mb-[120px] items-center'>
             <form
                 className={cn(
-                    'flex flex-row w-[380px] sm:w-[550px] p-1 items-center bg-white rounded-3xl border border-black shadow-lg focus-within:ring-4 transition',
+                    'flex flex-row w-[360px] sm:w-[550px] p-1 items-center bg-white rounded-3xl border border-black shadow-lg focus-within:ring-4 transition',
                     {
                         'ring-2 ring-red-500': typing && !isValidUrl,
                     },
