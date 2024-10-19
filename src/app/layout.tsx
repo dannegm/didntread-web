@@ -1,25 +1,20 @@
-import type { Metadata } from 'next';
 import './globals.css';
 
-import { Merriweather } from '@next/font/google';
+import { type Metadata } from 'next';
+import { type ChildrenContainer } from '@/types/common';
 
-const merriweather = Merriweather({
-    weight: ['700'],
-    subsets: ['latin'],
-});
+import { getEnvironmentInfo } from '@/helpers/environment';
+import RootLayout from '@/components/layout/root-layout';
+
+const environmentInfo = getEnvironmentInfo();
 
 export const metadata: Metadata = {
     title: "Did't read.",
+    other: {
+        ...environmentInfo,
+    },
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
-    return (
-        <html lang='en'>
-            <body className={`${merriweather.className} antialiased`}>{children}</body>
-        </html>
-    );
+export default function Layout({ children }: Readonly<ChildrenContainer>) {
+    return <RootLayout environmentInfo={environmentInfo}>{children}</RootLayout>;
 }

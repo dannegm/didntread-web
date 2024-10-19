@@ -1,12 +1,16 @@
-import DandcingText from './dancing-text';
+import DandcingText from '@/components/common/dancing-text';
+import Debugger from '@/components/common/debugger';
+import Logo from '@/components/common/logo';
+import { PageProps } from '@/types/common';
 
-export default function Home() {
+export default async function Home({ searchParams }: PageProps) {
+    const debug = searchParams?.debug !== undefined;
+
     return (
         <main className='h-full w-full flex flex-col justify-center items-center'>
+            <Debugger show={debug} />
             <DandcingText />
-            <h1 className='text-4xl italic -mt-[480px]'>
-                Did'nt Read
-            </h1>
+            <Logo className='-mt-[480px]' />
         </main>
     );
 }
