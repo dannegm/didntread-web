@@ -13,8 +13,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes dancer {
+@keyframes dancer-sm {
     100% {
         background-position: -16470px;
     }
+}
+
+@keyframes dancer {
+    100% {
+        background-position: -12352px;
+    }
+}
+
+.debug * {
+    outline: 1px dashed hsl(320 100% 50%);
 }

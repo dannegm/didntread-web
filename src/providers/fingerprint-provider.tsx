@@ -6,6 +6,8 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 import { tokenEncode } from '@/helpers/crypto';
 
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
 export interface Fingerprint {
     fingerprint?: string;
     token?: string;
@@ -32,7 +34,7 @@ export default function FingerprintProvider({ children }: ChildrenContainer) {
 
             const tokenResult = tokenEncode({
                 fingerprint: result.visitorId,
-                apiKey: 'GEzj5E0Ybrw9f73NP07UsPMinzmACZx5',
+                apiKey: API_KEY,
             });
 
             setToken(tokenResult);

@@ -13,12 +13,11 @@ import { cn } from '@/helpers/utils';
 
 export default function DandcingText({ className }: ElementProps) {
     return (
-        <div className='select-none bg-[#fcfcfc] flex justify-center items-center w-screen h-screen'>
+        <div className='select-none bg-[#fcfcfc] overflow-hidden'>
             <p
-                id='dancer'
                 className={cn(
-                    'dancer text-[10px] font-normal font-mono leading-none break-all h-[480px] w-[550px] overflow-hidden text-transparent',
-                    "bg-left bg-clip-text bg-[length:16470px_480px] bg-[url('/images/dancer.jpg')] animate-[dancer_2s_steps(30)_infinite]",
+                    'text-[10px] font-normal font-mono leading-none break-all h-[360px] w-[412px] sm:h-[480px] sm:w-[550px] overflow-hidden text-transparent',
+                    "bg-left bg-clip-text bg-[length:12352px_360px] sm:bg-[length:16470px_480px] bg-[url('/images/dancer.jpg')] animate-[dancer_2s_steps(30)_infinite] sm:animate-[dancer-sm_2s_steps(30)_infinite]",
                     className,
                 )}
             >

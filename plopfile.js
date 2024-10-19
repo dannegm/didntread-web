@@ -17,8 +17,26 @@ module.exports = function (plop) {
         actions: [
             {
                 type: 'add',
-                path: '{{dest}}/{{kebabCase name}}.tsx',
+                path: './src/components/common/{{kebabCase name}}.tsx',
                 templateFile: 'templates/element/component.tsx.hbs',
+            },
+        ],
+    });
+
+    plop.setGenerator('icon', {
+        description: 'Create a Icon component structure',
+        prompts: [
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Provider name:',
+            },
+        ],
+        actions: [
+            {
+                type: 'add',
+                path: './src/components/icons/{{kebabCase name}}.tsx',
+                templateFile: 'templates/icon/component.tsx.hbs',
             },
         ],
     });
@@ -31,17 +49,11 @@ module.exports = function (plop) {
                 name: 'name',
                 message: 'Provider name:',
             },
-            {
-                type: 'input',
-                name: 'dest',
-                message: 'Destination directory? (leave empty for current directory)',
-                default: process.cwd(),
-            },
         ],
         actions: [
             {
                 type: 'add',
-                path: '{{dest}}/{{kebabCase name}}-provider.tsx',
+                path: './src/providers/{{kebabCase name}}-provider.tsx',
                 templateFile: 'templates/provider/component.tsx.hbs',
             },
         ],

@@ -1,16 +1,38 @@
-import DandcingText from '@/components/common/dancing-text';
+import { type PageProps } from '@/types/common';
+import { cn } from '@/helpers/utils';
+
 import Debugger from '@/components/common/debugger';
+import DandcingText from '@/components/common/dancing-text';
 import Logo from '@/components/common/logo';
-import { PageProps } from '@/types/common';
+import Tokens from '@/components/common/tokens';
+import Omnibox from '@/components/common/omnibox';
+import Footer from '@/components/layout/footer';
+import ListAbstracts from '@/components/common/list-abstracts';
 
 export default async function Home({ searchParams }: PageProps) {
     const debug = searchParams?.debug !== undefined;
 
     return (
-        <main className='h-full w-full flex flex-col justify-center items-center'>
+        <>
             <Debugger show={debug} />
-            <DandcingText />
-            <Logo className='-mt-[480px]' />
-        </main>
+            <main
+                className={cn('w-screen flex flex-col items-center mt-[10%]', {
+                    debug,
+                })}
+            >
+                <Tokens />
+                <div className='relative w-full sm:w-[550px]'>
+                    <DandcingText className='absolute -z-0 left-1/2 w-[412px] sm:w-[550px] -ml-[206px] sm:-ml-[275px]' />
+                    <div className='relative z-10 -mt-4 sm:mt-[236px] h-full flex flex-col gap-6 items-center justify-center'>
+                        <Logo />
+                        <Omnibox />
+                    </div>
+                </div>
+
+                <ListAbstracts className='mx-4 md:mx-auto max-w-2xl z-10 -mt-24 mb-8' />
+
+                <Footer />
+            </main>
+        </>
     );
 }
