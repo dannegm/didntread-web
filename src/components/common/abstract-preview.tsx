@@ -12,7 +12,7 @@ export default function AbstractPreview({ className, data }: AbstractCardProps) 
     return (
         <article
             className={cn(
-                'flex flex-col gap-4 h-auto sm:h-96  p-2 pt-16 sm:p-4 overflow-hidden bg-white rounded-xl border border-gray-400 justify-end',
+                'flex flex-col gap-4 h-auto sm:h-96 p-2 pt-16 sm:p-4 overflow-hidden bg-white rounded-xl border border-gray-400 justify-end',
                 className,
             )}
             style={{

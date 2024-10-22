@@ -1,9 +1,12 @@
 'use client';
+import { cn } from '@/helpers/utils';
+import { ElementProps } from '@/types/common';
+
 import dynamic from 'next/dynamic';
 
 const ReactJson = dynamic(() => import('react-json-view'), { ssr: false });
 
-export interface JsonViewerProps {
+export interface JsonViewerProps extends ElementProps {
     name?: string;
     data?: any;
     expanded?: boolean;
@@ -15,9 +18,14 @@ const REACT_JSON_STYLES = {
     fontSize: '0.778rem',
 };
 
-export default function JsonViewer({ name = 'root', data = {}, expanded }: JsonViewerProps) {
+export default function JsonViewer({
+    className,
+    name = 'root',
+    data = {},
+    expanded,
+}: JsonViewerProps) {
     return (
-        <div className='block max-w-full p-4 pb-3 bg-slate-900'>
+        <div className={cn('block max-w-full p-4 pb-3 bg-slate-900', className)}>
             <ReactJson
                 name={name}
                 src={data}

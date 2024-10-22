@@ -4,7 +4,6 @@ import { cn } from '@/helpers/utils';
 
 import { useGetAbstracts } from '@/services/didntread';
 import AbstractCard from './abstract-card';
-import AbstractPreview from './abstract-preview';
 
 export default function ListAbstracts({ className }: ElementProps) {
     const { data, isLoading } = useGetAbstracts();

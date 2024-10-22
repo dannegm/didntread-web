@@ -1,14 +1,20 @@
+'use client';
 import { type ElementProps } from '@/types/common';
 import { type AbstractModel } from '@/types/models';
-import { cn } from '@/helpers/utils';
+
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { cn } from '@/helpers/utils';
+import useDebug from '@/hooks/use-debug';
+import JsonViewer from './json-viewer';
 
 export interface AbstractCardProps extends ElementProps {
     data: AbstractModel;
 }
 
 export default function AbstractCard({ className, data }: AbstractCardProps) {
+    const debug = useDebug();
     return (
         <article
             className={cn(
@@ -16,6 +22,9 @@ export default function AbstractCard({ className, data }: AbstractCardProps) {
                 className,
             )}
         >
+            {debug && <span className='font-mono text-xs break-words'>{data.hash}</span>}
+            {debug && <JsonViewer className='childs:outline-none' name='abstract' data={data} />}
+
             <h2 className='font-bold text-sm text-balance'>{data.title}</h2>
 
             <div className='relative h-16'>
@@ -52,6 +61,14 @@ export default function AbstractCard({ className, data }: AbstractCardProps) {
                         </div>
                     </div>
                 </Link>
+
+                {debug && (
+                    <div className='childs:outline-none flex flex-row gap-2 bg-gray-100 py-2 px-4 -m-4 mt-0'>
+                        <div className='flex flex-row gap-1 items-center'>
+                            <span className='text-xs text-blue-800 break-words'>{data.url}</span>
+                        </div>
+                    </div>
+                )}
             </footer>
         </article>
     );

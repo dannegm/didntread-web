@@ -1,34 +1,11 @@
 'use client';
-import useSWR from 'swr';
 import NumberFlow from '@number-flow/react';
 
-import { useFingerprint } from '@/providers/fingerprint-provider';
+import { useGetTokens } from '@/services/didntread';
 import PokerChipRegular from '../icons/poker-chip-regular';
 
-const getTokens = async (token?: string) => {
-    if (!token) {
-        return null;
-    }
-
-    const res = await fetch('https://endpoints.hckr.mx/didntread/tokens', {
-        headers: {
-            'x-dnn-token': token,
-        },
-    });
-
-    if (!res.ok) {
-        return null;
-    }
-
-    const data = await res.json();
-    return data;
-};
-
 export default function Tokens() {
-    const { token } = useFingerprint();
-
-    const { data } = useSWR(token, getTokens);
-
+    const { data } = useGetTokens();
     const tokens = data?.tokens || 0;
 
     return (
