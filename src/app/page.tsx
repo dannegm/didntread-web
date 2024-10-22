@@ -1,4 +1,3 @@
-import { type PageProps } from '@/types/common';
 import { cn } from '@/helpers/utils';
 
 import Debugger from '@/components/common/debugger';
@@ -9,17 +8,11 @@ import Omnibox from '@/components/common/omnibox';
 import Footer from '@/components/layout/footer';
 import ListAbstracts from '@/components/common/list-abstracts';
 
-export default async function Home({ searchParams }: PageProps) {
-    const debug = searchParams?.debug !== undefined;
-
+export default async function Home() {
     return (
         <>
-            <Debugger show={debug} />
-            <main
-                className={cn('w-screen flex flex-col items-center mt-[10%]', {
-                    debug,
-                })}
-            >
+            <Debugger />
+            <main className={cn('w-screen flex flex-col items-center mt-[10%]')}>
                 <Tokens />
 
                 <div className='relative w-full sm:w-[550px]'>
