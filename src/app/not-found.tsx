@@ -3,7 +3,7 @@ import DandcingText from '@/components/common/dancing-text';
 import Logo from '@/components/common/logo';
 import Footer from '@/components/layout/footer';
 
-export default async function Loading() {
+export default async function NotFound() {
     return (
         <main className='w-screen flex flex-col items-center mt-[10%]'>
             <div className='relative h-[480px] w-[550px]'>
