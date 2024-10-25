@@ -1,6 +1,6 @@
 'use client';
-import { type ChildrenContainer } from '@/types/common';
-import { type EnvironmentInfo } from '@/helpers/environment';
+import type { ChildrenContainer } from '@/types/common';
+import type { EnvironmentInfo } from '@/helpers/environment';
 import { createContext, useContext } from 'react';
 
 export interface EnviromentProps extends ChildrenContainer {

@@ -1,4 +1,4 @@
-import { type ElementProps } from '@/types/common';
+import type { ElementProps } from '@/types/common';
 
 import { Merriweather } from 'next/font/google';
 import { cn } from '@/helpers/utils';

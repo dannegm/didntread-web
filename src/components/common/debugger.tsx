@@ -1,5 +1,5 @@
 'use client';
-import { type ElementProps } from '@/types/common';
+import type { ElementProps } from '@/types/common';
 
 import { useQueryState } from 'nuqs';
 import { useHotkeys } from 'react-hotkeys-hook';
@@ -55,8 +55,8 @@ export default function Debugger({ className }: DebuggerProps) {
                 className,
             )}
         >
-            <div className='flex flex-row justify-between items-center px-4 py-2 font-mono text-sm text-white'>
-                <label htmlFor='show-lines'>Show lines</label>
+            <div className='hidden sm:flex flex-row justify-between items-center px-4 py-2 font-mono text-sm text-white'>
+                <label htmlFor='show-lines'>Show outlines</label>
                 <input
                     className='w-4 h-4'
                     name='show-lines'

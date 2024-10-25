@@ -1,5 +1,5 @@
 'use client';
-import { type ElementProps } from '@/types/common';
+import type { ElementProps } from '@/types/common';
 import { cn } from '@/helpers/utils';
 
 import { useGetAbstracts } from '@/services/didntread';

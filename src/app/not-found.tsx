@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import DandcingText from '@/components/common/dancing-text';
 import Logo from '@/components/common/logo';
 import Footer from '@/components/layout/footer';
-import Link from 'next/link';
 
 export default async function Loading() {
     return (

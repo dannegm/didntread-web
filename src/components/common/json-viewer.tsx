@@ -1,6 +1,6 @@
 'use client';
+import type { ElementProps } from '@/types/common';
 import { cn } from '@/helpers/utils';
-import { ElementProps } from '@/types/common';
 
 import dynamic from 'next/dynamic';
 

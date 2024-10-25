@@ -1,4 +1,4 @@
-import { type ElementProps } from '@/types/common';
+import type { ElementProps } from '@/types/common';
 import { cn } from '@/helpers/utils';
 
 export default function Footer({ className }: ElementProps) {

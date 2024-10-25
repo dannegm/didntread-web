@@ -1,5 +1,5 @@
 'use client';
-import { type ChildrenContainer } from '@/types/common';
+import type { ChildrenContainer } from '@/types/common';
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';

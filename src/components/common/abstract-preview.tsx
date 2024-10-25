@@ -1,8 +1,9 @@
-import { type ElementProps } from '@/types/common';
-import { type AbstractModel } from '@/types/models';
-import { cn } from '@/helpers/utils';
+import type { ElementProps } from '@/types/common';
+import type { AbstractModel } from '@/types/models';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from '@/helpers/utils';
 
 export interface AbstractCardProps extends ElementProps {
     data: AbstractModel;

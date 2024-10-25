@@ -1,6 +1,6 @@
 'use client';
-import { type ElementProps } from '@/types/common';
-import { type AbstractModel } from '@/types/models';
+import type { ElementProps } from '@/types/common';
+import type { AbstractModel } from '@/types/models';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,7 +23,17 @@ export default function AbstractCard({ className, data }: AbstractCardProps) {
             )}
         >
             {debug && <span className='font-mono text-xs break-words'>{data.hash}</span>}
-            {debug && <JsonViewer className='childs:outline-none' name='abstract' data={data} />}
+            {debug && (
+                <div className='block mb-1 bg-slate-900 rounded-md overflow-hidden'>
+                    <div className='block max-w-[320px] mx-auto overflow-scroll'>
+                        <JsonViewer
+                            className='childs:outline-none w-full'
+                            name='abstract'
+                            data={data}
+                        />
+                    </div>
+                </div>
+            )}
 
             <h2 className='font-bold text-sm text-balance'>{data.title}</h2>
 

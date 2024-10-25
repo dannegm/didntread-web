@@ -1,6 +1,8 @@
 'use client';
-import { type ElementProps } from '@/types/common';
-import { type FormEvent, type ChangeEvent, type MouseEvent, useState } from 'react';
+import type { ElementProps } from '@/types/common';
+import type { FormEvent, ChangeEvent, MouseEvent } from 'react';
+
+import { useState } from 'react';
 import { trim } from 'lodash';
 
 import { cn } from '@/helpers/utils';

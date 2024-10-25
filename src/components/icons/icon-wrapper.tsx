@@ -1,4 +1,4 @@
-import { type ReactNode, type JSX, type SVGProps } from 'react';
+import type { ReactNode, JSX, SVGProps } from 'react';
 
 export type SvgProps = JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>;
 

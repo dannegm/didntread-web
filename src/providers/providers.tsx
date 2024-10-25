@@ -1,6 +1,6 @@
 'use client';
-import { type ChildrenContainer } from '@/types/common';
-import { type EnvironmentInfo } from '@/helpers/environment';
+import type { ChildrenContainer } from '@/types/common';
+import type { EnvironmentInfo } from '@/helpers/environment';
 
 import { Provider as ReduxProvider } from 'react-redux';
 import FingerprintProvider from '@/providers/fingerprint-provider';
