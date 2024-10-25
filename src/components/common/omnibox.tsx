@@ -1,18 +1,18 @@
 'use client';
 import { type ElementProps } from '@/types/common';
-import { type FormEvent, type ChangeEvent, useState } from 'react';
+import { type FormEvent, type ChangeEvent, type MouseEvent, useState } from 'react';
 import { trim } from 'lodash';
 
 import { cn } from '@/helpers/utils';
 
 import LinkSimpleRegular from '@/components/icons/link-simple-regular';
 import LightningFill from '@/components/icons/lightning-fill';
+import ClipboardRegular from '@/components/icons/clipboard-regular';
 
 import { urlValidator } from '@/helpers/validators';
 import { useScrapAbstract } from '@/services/didntread';
 
 import AbstractPreview from './abstract-preview';
-import { AbstractModel } from '@/types/models';
 
 export default function Omnibox({ className }: ElementProps) {
     const [inputUrl, setInputUrl] = useState<string>('');
@@ -38,6 +38,18 @@ export default function Omnibox({ className }: ElementProps) {
     const handleUrlChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInputUrl(event.target.value);
         setTyping(true);
+    };
+
+    const handlePaste = async (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        try {
+            const clipboardText = await navigator.clipboard.readText();
+            if (urlValidator(clipboardText)) {
+                setInputUrl(clipboardText);
+            }
+        } catch (error) {
+            console.warn('Error trying to read the clipboard', error);
+        }
     };
 
     return (
@@ -66,6 +78,20 @@ export default function Omnibox({ className }: ElementProps) {
 
                 <div className='w-8 h-8 flex ml-2 items-center justify-center'>
                     <button
+                        type='button'
+                        className={cn(
+                            'select-none flex w-8 h-8 items-center justify-center rounded-full transition',
+                            'hover:scale-110 active:scale-105 disabled:opacity-50 disabled:cursor-not-allowed',
+                        )}
+                        onClick={handlePaste}
+                    >
+                        <ClipboardRegular className='text-black' />
+                    </button>
+                </div>
+
+                <div className='w-8 h-8 flex ml-2 items-center justify-center'>
+                    <button
+                        type='submit'
                         className={cn(
                             'select-none flex w-8 h-8 items-center justify-center rounded-full bg-black transition',
                             'hover:scale-110 active:scale-105 disabled:opacity-50 disabled:cursor-not-allowed',
