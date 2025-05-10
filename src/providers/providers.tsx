@@ -5,10 +5,10 @@ import type { EnvironmentInfo } from '@/helpers/environment';
 import { Provider as ReduxProvider } from 'react-redux';
 import FingerprintProvider from '@/providers/fingerprint-provider';
 import EnviromentProvider from '@/providers/enviroment-provider';
+import { TrackersProvider } from '@/providers/trackers-provider';
 
 import { store } from '@/store';
 import { Suspense } from 'react';
-import { TrackersProvider } from './trackers-provider';
 
 export interface ProvidersProps extends ChildrenContainer {
     environmentInfo?: EnvironmentInfo;
