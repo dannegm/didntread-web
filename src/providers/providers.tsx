@@ -8,6 +8,7 @@ import EnviromentProvider from '@/providers/enviroment-provider';
 
 import { store } from '@/store';
 import { Suspense } from 'react';
+import { TrackersProvider } from './trackers-provider';
 
 export interface ProvidersProps extends ChildrenContainer {
     environmentInfo?: EnvironmentInfo;
@@ -17,9 +18,11 @@ export default function Providers({ environmentInfo, children }: ProvidersProps)
     return (
         <ReduxProvider store={store}>
             <EnviromentProvider data={environmentInfo}>
-                <FingerprintProvider>
-                    <Suspense>{children}</Suspense>
-                </FingerprintProvider>
+                <TrackersProvider>
+                    <FingerprintProvider>
+                        <Suspense>{children}</Suspense>
+                    </FingerprintProvider>
+                </TrackersProvider>
             </EnviromentProvider>
         </ReduxProvider>
     );
